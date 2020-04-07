@@ -14,7 +14,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/shuLhan/go-bindata"
+	"github.com/unravelin/go-bindata"
 )
 
 const (

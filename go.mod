@@ -1,3 +1,3 @@
-module github.com/shuLhan/go-bindata
+module github.com/unravelin/go-bindata
 
 go 1.12

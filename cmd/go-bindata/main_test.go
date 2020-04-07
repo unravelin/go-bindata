@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/shuLhan/go-bindata"
+	"github.com/unravelin/go-bindata"
 )
 
 var (

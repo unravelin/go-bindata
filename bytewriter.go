@@ -9,13 +9,6 @@ import (
 	"io"
 )
 
-//nolint: gochecknoglobals
-var (
-	newline    = []byte{'\n'}
-	dataindent = []byte{'\t', '\t'}
-	space      = []byte{' '}
-)
-
 //
 // ByteWriter define a writer to write content of file.
 //
@@ -30,25 +23,6 @@ func (w *ByteWriter) Write(p []byte) (n int, err error) {
 	}
 
 	for n = range p {
-		if w.c%12 == 0 {
-			_, err = w.Writer.Write(newline)
-			if err != nil {
-				return n, err
-			}
-
-			_, err = w.Writer.Write(dataindent)
-			if err != nil {
-				return n, err
-			}
-
-			w.c = 0
-		} else {
-			_, err = w.Writer.Write(space)
-			if err != nil {
-				return n, err
-			}
-		}
-
 		_, err = fmt.Fprintf(w.Writer, "0x%02x,", p[n])
 		if err != nil {
 			return n, err
